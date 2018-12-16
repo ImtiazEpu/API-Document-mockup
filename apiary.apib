@@ -1,0 +1,183 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Polls API
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Users Collection [/users]
+
+### List All Users [GET]
+Retrieves list of users.
+
++ Response 200 (application/json)
+
+            {   
+                "id"       : 1,
+                "username": "abidul",
+                "email": "abid@gmail.com",
+                "created_at": "2015-08-05T08:40:51.620Z",
+                "updated_at": "2015-08-05T08:40:51.620Z"
+                
+            },
+            {   
+                "id"       : 2,
+                "username": "Maxdeo",
+                "email": "max@gmail.com",
+                "created_at": "2015-08-05T08:40:51.620Z",
+                "updated_at": "2015-08-05T08:40:51.620Z"
+                
+            },
+            {   
+                "id"       : 3,
+                "username": "jondeo",
+                "email": "jon@gmail.com",
+                "created_at": "2015-08-05T08:40:51.620Z",
+                "updated_at": "2015-08-05T08:40:51.620Z"
+                
+            },
+            {   
+                "id"       : 4,
+                "username": "khokon",
+                "email": "khokon@gmail.com",
+                "created_at": "2015-08-05T08:40:51.620Z",
+                "updated_at": "2015-08-05T08:40:51.620Z"
+                
+            },
+            {   
+                "id"       : 5,
+                "username": "Muhit",
+                "email": "muhit@gmail.com",
+                "created_at": "2015-08-05T08:40:51.620Z",
+                "updated_at": "2015-08-05T08:40:51.620Z"
+                
+            },
+            {   
+                "id"       : 6,
+                "username": "tasnim",
+                "email": "tasnim@gmail.com",
+                "created_at": "2015-08-05T08:40:51.620Z",
+                "updated_at": "2015-08-05T08:40:51.620Z"
+                
+            },
+            {   
+                "id"       : 7,
+                "username": "tareq77",
+                "email": "tareq@gmail.com",
+                "created_at": "2015-08-05T08:40:51.620Z",
+                "updated_at": "2015-08-05T08:40:51.620Z"
+                
+            },
+            {   
+                "id"       : 8,
+                "username": "aziz1122",
+                "email": "aziz@gmail.com",
+                "created_at": "2015-08-05T08:40:51.620Z",
+                "updated_at": "2015-08-05T08:40:51.620Z"
+                
+            },
+            {   
+                "id"       : 9,
+                "username": "zia159",
+                "email": "zia@gmail.com",
+                "created_at": "2015-08-05T08:40:51.620Z",
+                "updated_at": "2015-08-05T08:40:51.620Z"
+                
+            },
+            
+            
+       
+        
+
+
+### Create a New User [POST]
+
+Create a new user account.
+
++ Request (application/json)
+
+        {
+            "full_name": "Imtiaz Epu",
+            "username": "ImtiazEpu",
+            "email": "info@imtiazepu.com",
+            "password": "Imtiaz@1234"
+            
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+
+    + Body
+
+            {
+                "id": 11,
+                "full_name": "Imtiaz Epu",
+                "username": "ImtiazEpu",
+                "email": "info@imtiazepu.com"
+                
+            }
+ 
+ 
+ 
+            
+            
+## User authentication [/login]
+
+### Authenticat an user [POST]
+Authenticat an user and get JWT.
+
++ Request (application/json)
+
+            {   
+                "email"    : "info@imtiazepu.com",
+                "password" : "Imtiaz@1234"
+                
+            }
+            
++ Response 200 (application/json)
+
+    + Headers
+
+
+    + Body
+
+            {
+                "success": true,
+                "message": "User Found",
+                "token"  : "yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzY290Y2guaW.03f329983b86f7d9a9f5fef8"
+                
+                
+            }
+
+## User Profile [/profile]
+
+### Show logged in user's prodile [POST]
+Authenticat an user and get JWT token.
+
++ Header(application/json)
++ Header(Authorization: eyJ0eXAiOi.... )
+
++ Request (application/json)
+
+            {   
+                "email"    : "info@imtiazepu.com",
+                "password" : "Imtiaz@1234"
+                
+            }
+            
++ Response 200 (application/json)
+
+    + Headers
+
+
+    + Body
+
+            {
+                "success": true,
+                "message": "User Found",
+                "token"  : "87ee3d9d-ac2e-4dca-94fe-0db401cad4df"
+                
+                
+            }
